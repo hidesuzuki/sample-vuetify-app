@@ -1,30 +1,6 @@
 <template>
   <v-container>
     <v-row class="text-center">
-      <v-col cols="12">
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
-      </v-col>
-
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Discord Community</a>
-        </p>
-      </v-col>
-
       <v-col
         class="mb-5"
         cols="12"
@@ -34,17 +10,9 @@
         </h2>
 
         <v-row justify="center">
-          <a
-            v-for="(next, i) in shinsei"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-          <dialog-vue v-for="(next, i) in shinsei"
-            :key="i" :button-name="next.text" class="subheading mx-3"></dialog-vue>
+          <v-col class="mx-1" v-for="(next, i) in shinsei" :key="i" >
+            <dialog-vue :button-name="next.text" />
+          </v-col>
         </v-row>
       </v-col>
 
@@ -62,15 +30,6 @@
         </v-row>
       </v-col>
 
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <v-row justify="center">
-          <dialog-vue :button-name="'buttonを押せ'"></dialog-vue>
-        </v-row>
-      </v-col>
-
     </v-row>
   </v-container>
 </template>
@@ -84,12 +43,6 @@ import DialogVue from './DialogVue';
     components: {
       DialogVue
     },
-
-    // methods:{
-    //   dialogClose() {
-    //     this.dialog = false;
-    //   }
-    // },
 
     data: () => ({
       seisan: [
@@ -120,7 +73,6 @@ import DialogVue from './DialogVue';
           href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
         },
       ],
-      // dialog: false,
     }),
   }
 </script>

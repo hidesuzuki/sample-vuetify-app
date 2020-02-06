@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="secondary"
+      color="primary"
       dark
     >
       <div class="d-flex align-center">
@@ -32,7 +32,7 @@
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">ログイン</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
