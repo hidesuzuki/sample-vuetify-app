@@ -43,6 +43,8 @@
           >
             {{ next.text }}
           </a>
+          <dialog-vue v-for="(next, i) in shinsei"
+            :key="i" :button-name="next.text" class="subheading mx-3"></dialog-vue>
         </v-row>
       </v-col>
 
@@ -55,15 +57,8 @@
         </h2>
 
         <v-row justify="center">
-          <a
-            v-for="(link, i) in seisan"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
+          <dialog-vue v-for="(link, i) in seisan"
+            :key="i" :button-name="link.text"></dialog-vue>
         </v-row>
       </v-col>
 
